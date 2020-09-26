@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        position: absolute;
+      }
+
+      div {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+      }
+
+      #rightSide {
+        left: 500px;
+        border-left: 1px solid;
+      }
+    </style>
+  </head>
+  <body onload="generateFaces()">
+    <h1>Matching Game</h1>
+    <p>Click on the extra smiling face on the left side.</p>
+    <div id="leftSide"></div>
+    <div id="rightSide"></div>
+  </body>
+  <script>
+    let numberOfFaces = 5;
+    let theLeftSide = document.querySelector("#leftSide");
+
+    function generateFaces() {
+      for (let i = 0; i < numberOfFaces; i++) {
+        let imgTag = document.createElement("img");
+        // imgTag.src = "images/smile.png"
+        imgTag.src =
+          "https://sites.psu.edu/siowfa16/files/2016/10/YeDYzSR-10apkm4.png";
+        let randomTop = Math.floor(Math.random() * 400);
+        let randomLeft = Math.floor(Math.random() * 400);
+        imgTag.style.top = randomTop + "px";
+        imgTag.style.left = randomLeft + "px";
+        imgTag.style.width = "40px";
+        theLeftSide.appendChild(imgTag);
+      }
+    }
+  </script>
+</html>
